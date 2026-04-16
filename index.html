@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Iqbal Hossain | Statistics PhD Candidate</title>
+  <meta name="description"
+    content="Portfolio of Md Iqbal Hossain — PhD Candidate in Statistics at Old Dominion University, specializing in copula modeling, tropical cyclone analytics, and public health statistics." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            navy: {
+              800: '#1e3a8a',
+              900: '#1e2d6b',
+              950: '#0f172a',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Nav underline hover */
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #3b82f6;
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: #1d4ed8;
+    }
+
+    /* Hero gradient */
+    .hero-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e293b 100%);
+    }
+
+    /* Section accent line */
+    .accent-line {
+      display: block;
+      width: 52px;
+      height: 4px;
+      background: linear-gradient(to right, #1d4ed8, #60a5fa);
+      border-radius: 2px;
+    }
+
+    /* Profile ring */
+    .profile-ring {
+      background: linear-gradient(135deg, #60a5fa, #1d4ed8);
+      padding: 4px;
+      border-radius: 9999px;
+      display: inline-block;
+    }
+
+    /* Card lift */
+    .card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Timeline */
+    .tl-track {
+      border-left: 2px solid #bfdbfe;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -9px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 9999px;
+      background: #1d4ed8;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #1d4ed8;
+    }
+
+    /* Skill pill */
+    .pill {
+      transition: transform 0.15s ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Gradient text */
+    .grad-text {
+      background: linear-gradient(135deg, #1d4ed8, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .fade-up-delay {
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .fade-up-delay2 {
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    /* Scroll reveal (JS adds .revealed) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-slate-50 text-slate-900 antialiased">
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      aria-label="Main navigation">
+      <a href="#hero" class="font-serif font-bold text-slate-900 text-lg tracking-tight">Md Iqbal Hossain</a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <li><a href="#about" class="nav-link hover:text-blue-700 transition-colors">About</a></li>
+        <li><a href="#skills" class="nav-link hover:text-blue-700 transition-colors">Skills</a></li>
+        <li><a href="#research" class="nav-link hover:text-blue-700 transition-colors">Research</a></li>
+        <li><a href="#publications" class="nav-link hover:text-blue-700 transition-colors">Publications</a></li>
+        <li><a href="#experience" class="nav-link hover:text-blue-700 transition-colors">Experience</a></li>
+        <li><a href="#education" class="nav-link hover:text-blue-700 transition-colors">Education</a></li>
+        <li>
+          <a href="#contact" class="bg-blue-800 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+            Contact
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="nav-toggle" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+        aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars text-lg"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-5 py-4 space-y-1">
+      <a href="#about" class="block py-2 text-sm font-medium text-slate-700 hover:text-blue-700">About</a>
+      <a href="#skills" class="block py-2 text-sm font-medium text-slate-700 hover:text-blue-700">Skills</a>
+      <a href="#research" class="block py-2 text-sm font-medium text-slate-700 hover:text-blue-700">Research</a>
+      <a href="#publications" class="block py-2 text-sm font-medium text-slate-700 hover:text-blue-700">Publications</a>
+      <a href="#experience" class="block py-2 text-sm font-medium text-slate-700 hover:text-blue-700">Experience</a>
+      <a href="#education" class="block py-2 text-sm font-medium text-slate-700 hover:text-blue-700">Education</a>
+      <a href="#contact" class="block py-2 text-sm font-medium text-blue-700 font-semibold">Contact</a>
+    </div>
+  </header>
+
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" class="hero-bg min-h-screen flex items-center pt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+
+      <div class="flex flex-col lg:flex-row items-center gap-14">
+
+        <!-- Profile photo -->
+        <div class="flex-shrink-0 fade-up">
+          <div class="profile-square">
+            <!--
+              PLACEHOLDER: Replace "YOUR_PHOTO.jpg" with your actual photo filename.
+              Place the photo in the same folder as this HTML file.
+            -->
+            <img id="profile-img" src="YOUR_PHOTO.jpg" alt="Md Iqbal Hossain"
+              class="w-72 h-72 lg:w-80 lg:h-80 rounded-full object-cover block border-4 border-white/10 shadow-2xl"
+              onerror="this.style.display='none'; document.getElementById('profile-initials').style.display='flex';" />
+
+            <div id="profile-initials"
+              class="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-slate-700 hidden items-center justify-center text-white font-serif font-bold text-6xl"
+              aria-hidden="true">
+              IH
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Hero text -->
+        <div class="text-center lg:text-left">
+          <p class="fade-up text-yellow-400 text-xs font-semibold uppercase tracking-widest mb-3">
+            PhD Candidate &nbsp;·&nbsp; Old Dominion University &nbsp;·&nbsp; Norfolk, VA
+          </p>
+          <h1 class="fade-up font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-bold leading-tight mb-5">
+            Md Iqbal<br class="hidden sm:block" /> Hossain
+          </h1>
+          <p class="fade-up-delay text-slate-300 text-lg sm:text-xl max-w-2xl leading-relaxed mb-8">
+            Statistician specializing in
+            <span class="text-blue-400 font-semibold">Dependency Structure Analysis</span>,
+            <span class="text-blue-400 font-semibold">Causal Dependency Analysis though DAGs</span>,
+            <span class="text-blue-400 font-semibold">Copula Modeling</span>,
+            <span class="text-blue-400 font-semibold">Count Time Series Data</span>, and
+            <span class="text-blue-400 font-semibold">Tropical Cyclone Count Data Analytics</span>:
+            advancing computational statistics with applications in count time series, climate science, public health,
+            and electoral
+            behavior.
+          </p>
+
+          <!-- CTA buttons -->
+          <div class="fade-up-delay flex flex-wrap gap-4 justify-center lg:justify-start mb-9">
+            <a href="#research"
+              class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold transition-all hover:shadow-lg hover:shadow-blue-500/30">
+              View My Research
+            </a>
+            <a href="mailto:mhoss005@odu.edu"
+              class="border border-slate-400 hover:border-blue-400 text-white hover:text-blue-400 px-6 py-3 rounded-lg font-semibold transition-all hover:bg-white/5">
+              Get In Touch
+            </a>
+          </div>
+
+
+          <div class="fade-up-delay-1.5 mb-10 max-w-xl">
+            <div
+              class="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm shadow-xl shadow-emerald-500/5">
+
+              <div class="flex items-center gap-3 mb-4">
+                <div class="relative flex h-3 w-3">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg--500"></span>
+                </div>
+                <div class="relative flex h-3 w-3">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                </div>
+                <div class="relative flex h-3 w-3">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg--500"></span>
+                </div>
+                <span class="text-red font-bold uppercase tracking-[0.15em] text-red-400">Actively seeking <span
+                    class="text-emerald-400 font-semibold">Post-PhD opportunities</span> starting <span
+                    class="text-white border-b border-emerald-500/50">Fall 2026</span>
+
+
+              </div>
+
+
+
+              <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                Actively seeking <span class="text-white font-semibold">Post-PhD roles</span> across academia and
+                industry, focusing on advanced statistical modeling and data science.
+              </p>
+
+              <div class="flex flex-wrap gap-2">
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <i class="fas fa-university text-blue-400 text-[10px]"></i>
+                  <span class="text-blue-200 text-[11px] font-bold uppercase">Postdoc</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <i class="fas fa-university text-blue-400 text-[10px]"></i>
+                  <span class="text-blue-200 text-[11px] font-bold uppercase">Teaching</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <i class="fas fa-university text-blue-400 text-[10px]"></i>
+                  <span class="text-blue-200 text-[11px] font-bold uppercase">Data Scientist</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <i class="fas fa-university text-blue-400 text-[10px]"></i>
+                  <span class="text-blue-200 text-[11px] font-bold uppercase">Statistician</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <i class="fas fa-university text-blue-400 text-[10px]"></i>
+                  <span class="text-blue-200 text-[11px] font-bold uppercase">Biostatistician</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <i class="fas fa-university text-blue-400 text-[10px]"></i>
+                  <span class="text-blue-200 text-[11px] font-bold uppercase">Research Scientist</span>
+                </div>
+                <div class="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+                  <i class="fas fa-university text-blue-400 text-[10px]"></i>
+                  <span class="text-blue-200 text-[11px] font-bold uppercase">Statistical Analyst</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Social icons -->
+          <div class="fade-up-delay2 flex items-center gap-5 justify-center lg:justify-start">
+            <a href="https://github.com/iqbal1012" target="_blank" rel="noopener" aria-label="GitHub"
+              class="text-slate-400 hover:text-white transition-colors text-2xl">
+              <i class="fab fa-github"></i>
+            </a>
+            <!--
+              PLACEHOLDER: Replace YOUR_LINKEDIN_URL with your actual LinkedIn profile URL.
+              Example: https://www.linkedin.com/in/md-iqbal-hossain-stat
+            -->
+            <a href="https://www.linkedin.com/in/md-iqbal-hossain-stat" target="_blank" rel="noopener"
+              aria-label="LinkedIn" class="text-slate-400 hover:text-white transition-colors text-2xl">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <!--
+              PLACEHOLDER: Replace YOUR_GOOGLE_SCHOLAR_URL with your Google Scholar profile URL.
+            -->
+            <a href="https://scholar.google.com/citations?user=lHu-vjkAAAAJ&hl=en" target="_blank" rel="noopener"
+              aria-label="Google Scholar" class="text-slate-400 hover:text-white transition-colors text-2xl">
+              <i class="fas fa-graduation-cap"></i>
+            </a>
+            <!--
+              PLACEHOLDER: Replace YOUR_RESEARCHGATE_URL with your ResearchGate profile URL.
+            -->
+            <a href="https://www.researchgate.net/profile/Md-Iqbal-Hossain-8?ev=hdr_xprf" target="_blank" rel="noopener"
+              aria-label="ResearchGate" class="text-slate-400 hover:text-white transition-colors text-2xl">
+              <i class="fab fa-researchgate"></i>
+            </a>
+            <a href="https://sites.google.com/view/md-iqbal-hossain-stat-analyst/home" target="_blank" rel="noopener"
+              aria-label="Google Sites Portfolio" class="text-slate-400 hover:text-white transition-colors text-2xl">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="mailto:mhoss005@odu.edu" aria-label="Email"
+              class="text-slate-400 hover:text-white transition-colors text-2xl">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick stats bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-12 border-t border-slate-700/60">
+        <div class="text-center">
+          <div class="font-serif text-4xl font-bold text-white">4+</div>
+          <div class="text-slate-400 text-sm mt-1">Research Articles</div>
+        </div>
+        <div class="text-center">
+          <div class="font-serif text-4xl font-bold text-white">4</div>
+          <div class="text-slate-400 text-sm mt-1">Conference Presentations</div>
+        </div>
+        <div class="text-center">
+          <div class="font-serif text-4xl font-bold text-white">8+</div>
+          <div class="text-slate-400 text-sm mt-1">Years of Teaching</div>
+        </div>
+        <div class="text-center">
+          <div class="font-serif text-4xl font-bold text-white">4</div>
+          <div class="text-slate-400 text-sm mt-1">Academic Degrees</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Text -->
+        <div class="reveal">
+          <p class="text-blue-700 text-xs font-semibold uppercase tracking-widest mb-2">Who I Am</p>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Professional Statement</h2>
+          <span class="accent-line mb-7"></span>
+
+          <p class="text-slate-600 text-lg leading-relaxed mb-5">
+            I am a <strong class="text-slate-800">Ph.D. Candidate in Computational and Applied Mathematics
+              (Statistics)</strong> at Old Dominion University, with expertise spanning advanced statistical modeling,
+            count data analysis, machine learning, and public health data science.
+          </p>
+          <p class="text-slate-600 text-lg leading-relaxed mb-5">
+            My doctoral research, supervised by <a href="https://www.odu.edu/directory/norou-diawara" target="_blank"
+              rel="noopener noreferrer" class="text-slate-800 font-bold hover:text-blue-600 transition-colors">
+              Dr. Norou Diawara</a>, centers on
+            developing a novel <em>copula-based multi-series dependency framework</em> for modeling count time series
+            (e.g., tropical cyclone counts):
+            incorporating structural change-point detection and copula-based directed acyclic graphs (cDAGs) to map
+            storm interdependence
+            across the count time series (e.g., Atlantic, Pacific, and Indian Ocean basins using IBTrACS data for
+            tropical cyclone counts).
+          </p>
+          <p class="text-slate-600 text-lg leading-relaxed">
+            I bring a proven record in teaching, statistical consulting, and cross-disciplinary collaboration,
+            connecting rigorous methodology to real-world problems in climate science, electoral behavior, and clinical
+            prediction.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:mhoss005@odu.edu"
+              class="inline-flex items-center gap-2 bg-blue-800 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+              <i class="fas fa-envelope"></i> Email Me
+            </a>
+            <!--
+              PLACEHOLDER: Link your CV/resume PDF below.
+              Save your CV in the same folder as this HTML file.
+            -->
+            <a href="YOUR_CV.pdf" download
+              class="inline-flex items-center gap-2 border border-slate-300 hover:border-blue-500 text-slate-700 hover:text-blue-700 text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Highlight cards -->
+        <div class="grid grid-cols-2 gap-4 reveal">
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 card">
+            <div class="text-blue-700 text-2xl mb-3"><i class="fas fa-chart-line"></i></div>
+            <h3 class="font-bold text-slate-800 mb-1 text-sm">Statistical Modeling</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">Copulas, time series, count data, structural change-point
+              analysis</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 card">
+            <div class="text-slate-700 text-2xl mb-3"><i class="fas fa-code"></i></div>
+            <h3 class="font-bold text-slate-800 mb-1 text-sm">Programming</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">R, Python, SAS — expert-level statistical computing</p>
+          </div>
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 card">
+            <div class="text-blue-700 text-2xl mb-3"><i class="fas fa-heartbeat"></i></div>
+            <h3 class="font-bold text-slate-800 mb-1 text-sm">Public Health</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">Machine Learning and Bayesian Models for Early-Stage
+              Diabetes Risk Prediction</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 card">
+            <div class="text-slate-700 text-2xl mb-3"><i class="fas fa-wind"></i></div>
+            <h3 class="font-bold text-slate-800 mb-1 text-sm">Climate Analytics</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">Tropical cyclone modeling · IBTrACS global data</p>
+          </div>
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 card">
+            <div class="text-blue-700 text-2xl mb-3"><i class="fas fa-chalkboard-teacher"></i></div>
+            <h3 class="font-bold text-slate-800 mb-1 text-sm">Teaching</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">8+ semesters instructing statistics at ODU &amp; CMU</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="py-24 bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <p class="text-blue-400 text-xs font-semibold uppercase tracking-widest mb-2">Competencies</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-3">Technical Skills</h2>
+        <span class="accent-line mx-auto"></span>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Programming -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 card reveal">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center"><i
+                class="fas fa-code text-white"></i></div>
+            <h3 class="font-bold text-white">Programming Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="pill bg-blue-900/70 text-blue-300 border border-blue-700/60 px-3 py-1.5 rounded-full text-xs font-medium">R</span>
+            <span
+              class="pill bg-blue-900/70 text-blue-300 border border-blue-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Python</span>
+            <span
+              class="pill bg-blue-900/70 text-blue-300 border border-blue-700/60 px-3 py-1.5 rounded-full text-xs font-medium">SAS</span>
+            <span
+              class="pill bg-blue-900/70 text-blue-300 border border-blue-700/60 px-3 py-1.5 rounded-full text-xs font-medium">MySQL</span>
+            <span
+              class="pill bg-blue-900/70 text-blue-300 border border-blue-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Fortran</span>
+          </div>
+        </div>
+
+        <!-- Statistical Methods -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 card reveal">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-indigo-700 rounded-lg flex items-center justify-center"><i
+                class="fas fa-infinity text-white"></i></div>
+            <h3 class="font-bold text-white">Statistical Methods</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="pill bg-indigo-900/70 text-indigo-300 border border-indigo-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Copula
+              Models</span>
+            <span
+              class="pill bg-indigo-900/70 text-indigo-300 border border-indigo-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Time
+              Series</span>
+            <span
+              class="pill bg-indigo-900/70 text-indigo-300 border border-indigo-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Count
+              Data Analysis</span>
+            <span
+              class="pill bg-indigo-900/70 text-indigo-300 border border-indigo-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Bayesian
+              Inference</span>
+            <span
+              class="pill bg-indigo-900/70 text-indigo-300 border border-indigo-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Change-Point
+              Analysis</span>
+            <span
+              class="pill bg-indigo-900/70 text-indigo-300 border border-indigo-700/60 px-3 py-1.5 rounded-full text-xs font-medium">DAG</span>
+            <span
+              class="pill bg-indigo-900/70 text-indigo-300 border border-indigo-700/60 px-3 py-1.5 rounded-full text-xs font-medium">GLM
+              / Regression</span>
+          </div>
+        </div>
+
+        <!-- Machine Learning -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 card reveal">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-cyan-700 rounded-lg flex items-center justify-center"><i
+                class="fas fa-robot text-white"></i></div>
+            <h3 class="font-bold text-white">Machine Learning</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="pill bg-cyan-900/70 text-cyan-300 border border-cyan-700/60 px-3 py-1.5 rounded-full text-xs font-medium">SVM</span>
+            <span
+              class="pill bg-cyan-900/70 text-cyan-300 border border-cyan-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Decision
+              Trees</span>
+            <span
+              class="pill bg-cyan-900/70 text-cyan-300 border border-cyan-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Random
+              Forest</span>
+            <span
+              class="pill bg-cyan-900/70 text-cyan-300 border border-cyan-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Logistic
+              Regression</span>
+            <span
+              class="pill bg-cyan-900/70 text-cyan-300 border border-cyan-700/60 px-3 py-1.5 rounded-full text-xs font-medium">PCA</span>
+            <span
+              class="pill bg-cyan-900/70 text-cyan-300 border border-cyan-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Neural
+              Networks</span>
+          </div>
+        </div>
+
+        <!-- Data Visualization -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 card reveal">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-emerald-700 rounded-lg flex items-center justify-center"><i
+                class="fas fa-chart-bar text-white"></i></div>
+            <h3 class="font-bold text-white">Data Visualization</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="pill bg-emerald-900/70 text-emerald-300 border border-emerald-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Tableau</span>
+            <span
+              class="pill bg-emerald-900/70 text-emerald-300 border border-emerald-700/60 px-3 py-1.5 rounded-full text-xs font-medium">ggplot2</span>
+            <span
+              class="pill bg-emerald-900/70 text-emerald-300 border border-emerald-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Matplotlib</span>
+            <span
+              class="pill bg-emerald-900/70 text-emerald-300 border border-emerald-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Seaborn</span>
+            <span
+              class="pill bg-emerald-900/70 text-emerald-300 border border-emerald-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Plotly</span>
+          </div>
+        </div>
+
+        <!-- Statistical Software -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 card reveal">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-violet-700 rounded-lg flex items-center justify-center"><i
+                class="fas fa-laptop-code text-white"></i></div>
+            <h3 class="font-bold text-white">Statistical Software</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span
+              class="pill bg-violet-900/70 text-violet-300 border border-violet-700/60 px-3 py-1.5 rounded-full text-xs font-medium">SAS
+              Enterprise Miner</span>
+            <span
+              class="pill bg-violet-900/70 text-violet-300 border border-violet-700/60 px-3 py-1.5 rounded-full text-xs font-medium">SPSS</span>
+            <span
+              class="pill bg-violet-900/70 text-violet-300 border border-violet-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Minitab</span>
+            <span
+              class="pill bg-violet-900/70 text-violet-300 border border-violet-700/60 px-3 py-1.5 rounded-full text-xs font-medium">Stata</span>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 card reveal">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 bg-amber-700 rounded-lg flex items-center justify-center"><i
+                class="fas fa-certificate text-white"></i></div>
+            <h3 class="font-bold text-white">Certifications &amp; Awards</h3>
+          </div>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2 text-amber-300 text-xs">
+              <i class="fas fa-medal mt-0.5 flex-shrink-0"></i>
+              <span>SAS Certified Base Programmer for SAS 9</span>
+            </li>
+            <li class="flex items-start gap-2 text-amber-300 text-xs">
+              <i class="fas fa-trophy mt-0.5 flex-shrink-0"></i>
+              <span>2nd Place — VA-ASA Poster Competition (2023)</span>
+            </li>
+            <li class="flex items-start gap-2 text-amber-300 text-xs">
+              <i class="fas fa-check-circle mt-0.5 flex-shrink-0"></i>
+              <span>Graduate Teaching Assistant Development Program</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== RESEARCH ========== -->
+  <section id="research" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <p class="text-blue-700 text-xs font-semibold uppercase tracking-widest mb-2">Academic Work</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Research &amp; Projects</h2>
+        <span class="accent-line mx-auto"></span>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+
+        <!-- PhD Dissertation — full-width featured card -->
+        <article
+          class="lg:col-span-2 bg-gradient-to-br from-slate-900 to-blue-900 rounded-2xl p-8 text-white card reveal">
+          <div class="flex flex-col sm:flex-row sm:items-start gap-5 mb-6">
+            <div class="w-14 h-14 bg-blue-500/25 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-wind text-blue-400 text-2xl"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                PhD Dissertation &nbsp;·&nbsp; Ongoing
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold leading-snug">
+                Copula-Based Multi-Series Dependency Framework for Count Time Series Data (Tropical Cyclone (Hurricane)
+                Counts)
+              </h3>
+              <p class="text-blue-300 text-sm mt-1 font-medium">Advisor: Dr. Norou Diawara &nbsp;·&nbsp; Old Dominion
+                University</p>
+            </div>
+          </div>
+
+          <p class="text-slate-300 leading-relaxed mb-6">
+            Developing a novel statistical framework for dispersed, over/under-dispersed time-series count data using
+            the <strong class="text-white">copula technique</strong>. The model integrates <em>structural change-point
+              detection</em> and <em>directed acyclic graphs (DAG)</em> to map the interdependence across count time
+            series
+            (e.g., for tropical cyclone counts to map the interdependence in the Atlantic, Pacific, and Indian Ocean
+            basins. Applied to decades of global hurricane data from the <strong class="text-white">IBTrACS
+              (International Best Track Archive for Climate Stewardship))</strong>.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-4 mb-6">
+            <div class="bg-white/10 rounded-xl p-4">
+              <div class="text-blue-400 text-xs font-semibold uppercase mb-1">Dataset</div>
+              <div class="text-white text-sm font-medium">IBTrACS: Global, Decadal</div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+              <div class="text-blue-400 text-xs font-semibold uppercase mb-1">Core Methods</div>
+              <div class="text-white text-sm font-medium">Copulas · DAG · Change-Points</div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+              <div class="text-blue-400 text-xs font-semibold uppercase mb-1">Data Type</div>
+              <div class="text-white text-sm font-medium">Count Data · Time Series Data</div>
+            </div>
+          </div>
+
+          <!--
+            PLACEHOLDER: Replace with an actual project image (e.g., hurricane track map, model output).
+            Save image in the same folder and update the src attribute.
+          -->
+          <div class="overflow-hidden rounded-xl border border-white/10 bg-white/5">
+            <img src="TC_Spatial_Dependence_Network_(1980-2024).png"
+              alt="Tropical Cyclone Spatial Dependence Network (1980-2024)"
+              class="w-full h-auto object-cover hover:scale-[1.02] transition-transform duration-500" loading="lazy" />
+          </div>
+        </article>
+
+        <!-- Diabetes Prediction Project -->
+        <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card reveal">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-heartbeat text-emerald-600 text-xl"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full mb-2">Master's
+                Project · 2022</span>
+              <h3 class="text-lg font-bold text-slate-900 leading-snug">Early-Stage Diabetes Risk Prediction:
+                Large-Scale ML &amp; Bayesian Benchmarking</h3>
+              <p class="text-slate-500 text-xs mt-1">Supervisor: Dr. N. Rao Chaganty, ODU</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">
+            A comprehensive benchmarking study comparing Logistic Regression, SVM, Decision Trees, and multiple
+            ML/Bayesian models for early diabetes detection. Motivated by CDC data: 37M+ US adults with diabetes, 1 in
+            5 undiagnosed. Completed project extended to a published large-scale comparative analysis.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-medium">SVM</span>
+            <span class="pill bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-medium">Decision
+              Trees</span>
+            <span class="pill bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-medium">Bayesian
+              Models</span>
+            <span class="pill bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-medium">Logistic
+              Regression</span>
+            <span class="pill bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-medium">Public
+              Health</span>
+          </div>
+          <!--
+            PLACEHOLDER: Add a project image (e.g., ROC curves, confusion matrix).
+          -->
+          <div class="mt-5 bg-slate-100 border border-slate-200 rounded-lg p-2 flex items-center justify-center">
+            <img src="ML Algo Final.png" alt="ML Algo Final" class="max-h-65 w-auto object-contain">
+          </div>
+        </article>
+
+        <!-- Voter Analysis Project -->
+        <article class="bg-slate-50 border border-slate-200 rounded-2xl p-7 card reveal">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-vote-yea text-purple-600 text-xl"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full mb-2">Research
+                Assistant · 2020–2022</span>
+              <h3 class="text-lg font-bold text-slate-900 leading-snug">Voter Behavior, Turnout &amp; Suppression
+                Analysis of 2020 U.S. Election</h3>
+              <p class="text-slate-500 text-xs mt-1">ODU · School of Public Service &amp; Dept. of Mathematics &amp;
+                Statistics</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">
+            Analyzed the <strong>ANES 2020</strong> and Harvard's <strong>Cooperative Election Study 2020</strong>
+            datasets to model the probability of individual voter participation and identify systemic factors driving
+            voter suppression and turnout disparities in the 2020 U.S. Presidential Election.
+            Applied logistic regression, random forest models.
+            Presented the findings to interdisciplinary audiences in political science and statistics.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">ANES
+              2020</span>
+            <span class="pill bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">CES
+              2020</span>
+            <span class="pill bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">Voter
+              Suppression</span>
+            <span class="pill bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">Turnout
+              Modeling</span>
+            <span class="pill bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-medium">Logistic
+              Regression</span>
+          </div>
+          <!--
+            PLACEHOLDER: Add a project image (e.g., state-level choropleth map, coefficient plot).
+          -->
+          <div class="mt-5 bg-slate-100 border border-slate-200 rounded-lg p-2 flex items-center justify-center">
+            <img src="Voter Behavior.png" alt="Voter Behavior" class="max-h-70 w-auto object-contain">
+          </div>
+        </article>
+
+        <!-- Undergraduate Project -->
+        <article class="lg:col-span-2 bg-slate-50 border border-slate-200 rounded-2xl p-7 card reveal">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-hospital text-amber-600 text-xl"></i>
+            </div>
+            <div>
+              <span
+                class="inline-block bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-2">Undergraduate
+                Project · 2016–2017</span>
+              <h3 class="text-lg font-bold text-slate-900">A Study on the Evaluation of Hospital Facilities in
+                Bangladesh: Heart Patients</h3>
+              <p class="text-slate-500 text-xs mt-1">Supervisor: Mohammad Ahsan Uddin, Assoc. Prof., University of Dhaka
+              </p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Designed survey instrument, collected and cleaned data, and performed a three-phase analysis:
+            <em>univariate</em> (frequency tables, cross-tabulations), <em>bivariate</em> (chi-square tests, ANOVA), and
+            <em>multivariate</em> (KANO model, Principal Component Analysis) to evaluate hospital quality from patients'
+            perspectives.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="pill bg-amber-100 text-amber-700 text-xs px-2.5 py-1 rounded-full font-medium">Survey
+              Design</span>
+            <span class="pill bg-amber-100 text-amber-700 text-xs px-2.5 py-1 rounded-full font-medium">ANOVA</span>
+            <span class="pill bg-amber-100 text-amber-700 text-xs px-2.5 py-1 rounded-full font-medium">PCA</span>
+            <span class="pill bg-amber-100 text-amber-700 text-xs px-2.5 py-1 rounded-full font-medium">KANO
+              Model</span>
+            <span
+              class="pill bg-amber-100 text-amber-700 text-xs px-2.5 py-1 rounded-full font-medium">Chi-Square</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== PUBLICATIONS ========== -->
+  <section id="publications" class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <p class="text-blue-700 text-xs font-semibold uppercase tracking-widest mb-2">Scholarly Output</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Publications &amp; Presentations</h2>
+        <span class="accent-line mx-auto"></span>
+      </div>
+
+      <!-- Articles -->
+      <div class="mb-12 reveal">
+        <h3 class="flex items-center gap-2 font-bold text-slate-800 text-lg mb-5">
+          <i class="fas fa-file-alt text-blue-700"></i>
+          Research Articles
+        </h3>
+        <ol class="space-y-4">
+
+          <li class="bg-white border border-slate-200 rounded-xl p-6 card flex gap-4">
+            <span
+              class="w-8 h-8 bg-blue-100 text-blue-700 font-bold text-sm rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+            <div>
+              <h4 class="font-semibold text-slate-900 mb-1 leading-snug">
+                Applying Changepoint-Copula Modeling to Count Time Series Analysis: an Example of Tropical Cyclones
+              </h4>
+              <p class="text-slate-500 text-sm leading-relaxed">
+                This study introduces a framework combining changepoint detection and copula modeling to map shifting
+                global tropical cyclone dependencies between 1980 and 2024. Results reveal a major regime shift in 2000,
+                marked by a 59% surge in North Atlantic storm frequency and a move toward stronger, more complex
+                extreme-value dependencies across basins.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-purple-50 text-purple-700 text-xs px-2 py-0.5 rounded font-medium">Count Time Series
+                </span>
+                <span class="bg-purple-50 text-purple-700 text-xs px-2 py-0.5 rounded font-medium">Dependency
+                  Network</span>
+                <span class="bg-purple-50 text-purple-700 text-xs px-2 py-0.5 rounded font-medium">Structrual
+                  Break</span>
+                <span class="bg-purple-50 text-purple-700 text-xs px-2 py-0.5 rounded font-medium">Dependency
+                  Structure</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="bg-white border border-slate-200 rounded-xl p-6 card flex gap-4">
+            <span
+              class="w-8 h-8 bg-blue-100 text-blue-700 font-bold text-sm rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+            <div>
+              <h4 class="font-semibold text-slate-900 mb-1 leading-snug">
+                Comprehensive Benchmarking of Several Machine Learning and Bayesian Models for Early-Stage Diabetes Risk
+                Prediction: A Large-Scale Comparative Study
+              </h4>
+              <p class="text-slate-500 text-sm leading-relaxed">
+                Systematic comparison of predictive frameworks for clinical decision support in early diabetes
+                detection, covering SVM, decision trees, random forests, and Bayesian approaches.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-emerald-50 text-emerald-700 text-xs px-2 py-0.5 rounded font-medium">Machine
+                  Learning</span>
+                <span class="bg-emerald-50 text-emerald-700 text-xs px-2 py-0.5 rounded font-medium">Public
+                  Health</span>
+                <span class="bg-emerald-50 text-emerald-700 text-xs px-2 py-0.5 rounded font-medium">Bayesian
+                  Statistics</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="bg-white border border-slate-200 rounded-xl p-6 card flex gap-4">
+            <span
+              class="w-8 h-8 bg-blue-100 text-blue-700 font-bold text-sm rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+            <div>
+              <h4 class="font-semibold text-slate-900 mb-1 leading-snug">
+                Contemporary Voter Suppression: Impact on the 2020 General Election
+              </h4>
+              <p class="text-slate-500 text-sm leading-relaxed">
+                Quantitative analysis of systemic barriers to voting and their measurable influence on election outcomes
+                using large-scale electoral datasets.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded font-medium">Political Science</span>
+                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded font-medium">Applied Statistics</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="bg-white border border-slate-200 rounded-xl p-6 card flex gap-4">
+            <span
+              class="w-8 h-8 bg-blue-100 text-blue-700 font-bold text-sm rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+            <div>
+              <h4 class="font-semibold text-slate-900 mb-1 leading-snug">
+                In Search of the Rational Voter in the 2020 Presidential Election: Understanding the Impact of Voter
+                Costs and Benefits on Turnout
+              </h4>
+              <p class="text-slate-500 text-sm leading-relaxed">
+                Empirical examination of rational choice theory applied to 2020 voter participation patterns, using
+                probabilistic models on ANES and CES data.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded font-medium">Electoral Behavior</span>
+                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded font-medium">Rational Choice
+                  Theory</span>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+      <!-- Conference Presentations -->
+      <div class="reveal">
+        <h3 class="flex items-center gap-2 font-bold text-slate-800 text-lg mb-5">
+          <i class="fas fa-microphone-alt text-blue-700"></i>
+          Conference Presentations
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+
+          <div class="bg-white border border-slate-200 rounded-xl p-5 card">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-blue-700 font-bold text-sm">2025</span>
+              <span class="bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded font-medium">Poster</span>
+            </div>
+            <h4 class="font-semibold text-slate-800 text-sm">American Statistical Association — Virginia Chapter
+              (VA-ASA)</h4>
+            <p class="text-slate-500 text-xs mt-1">Virginia Tech, Blacksburg, VA</p>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-5 card">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-blue-700 font-bold text-sm">2024</span>
+              <span class="bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded font-medium">Presentation</span>
+            </div>
+            <h4 class="font-semibold text-slate-800 text-sm">Midwest Political Science Association Annual Conference
+            </h4>
+            <p class="text-slate-500 text-xs mt-1">Chicago, IL</p>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl p-5 card">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-blue-700 font-bold text-sm">2024</span>
+              <span class="bg-slate-100 text-slate-600 text-xs px-2 py-0.5 rounded font-medium">Poster</span>
+            </div>
+            <h4 class="font-semibold text-slate-800 text-sm">American Statistical Association — Virginia Chapter
+              (VA-ASA)</h4>
+            <p class="text-slate-500 text-xs mt-1">University of Virginia, Charlottesville, VA</p>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 card">
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-amber-700 font-bold text-sm">2023</span>
+              <span class="bg-amber-100 text-amber-700 text-xs px-2 py-0.5 rounded font-semibold">2nd Place Award</span>
+            </div>
+            <h4 class="font-semibold text-slate-800 text-sm">American Statistical Association — Virginia Chapter
+              (VA-ASA)</h4>
+            <p class="text-slate-500 text-xs mt-1">Virginia Commonwealth University, Richmond, VA</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section id="experience" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <p class="text-blue-700 text-xs font-semibold uppercase tracking-widest mb-2">Career History</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Professional Experience</h2>
+        <span class="accent-line mx-auto"></span>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-14">
+
+        <!-- Research Timeline -->
+        <div class="reveal">
+          <h3 class="flex items-center gap-2 font-bold text-slate-800 text-lg mb-8">
+            <i class="fas fa-flask text-blue-700"></i> Research Experience
+          </h3>
+          <div class="relative pl-8 tl-track space-y-8">
+
+            <!-- PhD Research -->
+            <div class="relative">
+              <div class="tl-dot"></div>
+              <div class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+                <span class="text-blue-700 text-xs font-semibold">2023 – Present</span>
+                <h4 class="font-bold text-slate-900 mt-1">Graduate Research Assistant</h4>
+                <p class="text-blue-700 text-sm font-medium mb-2">Old Dominion University · Norfolk, VA</p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Developing copula-based multi-basin tropical cyclone count models with structural change-point
+                  analysis and DAG interdependence mapping. Applied to global IBTrACS hurricane data.
+                </p>
+              </div>
+            </div>
+
+            <!-- Voter Research -->
+            <div class="relative">
+              <div class="tl-dot" style="background:#64748b;box-shadow:0 0 0 2px #64748b;"></div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                <span class="text-slate-500 text-xs font-semibold">2020 – 2022</span>
+                <h4 class="font-bold text-slate-900 mt-1">Graduate Research Assistant</h4>
+                <p class="text-slate-600 text-sm font-medium mb-2">ODU · School of Public Service &amp; Dept. of Math
+                  &amp; Statistics</p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Voter behavior and turnout analysis using ANES 2020 and Harvard CES 2020 data. Modeled voter
+                  suppression determinants in the 2020 U.S. Presidential Election.
+                </p>
+              </div>
+            </div>
+
+            <!-- Consulting Internship -->
+            <div class="relative">
+              <div class="tl-dot" style="background:#64748b;box-shadow:0 0 0 2px #64748b;"></div>
+              <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+                <span class="text-slate-500 text-xs font-semibold">Summer 2019</span>
+                <h4 class="font-bold text-slate-900 mt-1">Statistical Consulting Intern</h4>
+                <p class="text-slate-600 text-sm font-medium mb-2">Central Michigan University · Statistical Consulting
+                  Center</p>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                  Under Dr. Chin-I Cheng. Tableau training &amp; dashboard design; carotid artery stenosis imaging study
+                  (US/CTA/ICA); flu vaccine response analysis by zip code; MAT survey analysis (student &amp;
+                  non-student cohorts).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teaching Experience -->
+        <div class="reveal">
+          <h3 class="flex items-center gap-2 font-bold text-slate-800 text-lg mb-8">
+            <i class="fas fa-chalkboard-teacher text-blue-700"></i> Teaching Experience
+          </h3>
+
+          <!-- ODU -->
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-6 mb-4">
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <h4 class="font-bold text-slate-900">Old Dominion University</h4>
+                <p class="text-blue-700 text-xs font-semibold">Norfolk, VA</p>
+              </div>
+              <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded">2021 – 2026</span>
+            </div>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-circle text-blue-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span class="text-slate-700"><strong>STAT-130M</strong> · Elementary Statistics &mdash;
+                  <em>Instructor</em> (Fall 2021, Fall 2022, Spring 2023, Fall 2024)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-circle text-blue-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span class="text-slate-700"><strong>STAT-603</strong> · Probability Models for Data Science &mdash;
+                  <em>Teaching Assistant</em> (2024–2026)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-circle text-blue-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span class="text-slate-700"><strong>STAT-604</strong> · Statistical Tools for Data Science &mdash;
+                  <em>Teaching Assistant</em> (2024–2026)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CMU -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <h4 class="font-bold text-slate-900">Central Michigan University</h4>
+                <p class="text-slate-500 text-xs font-semibold">Mt. Pleasant, MI</p>
+              </div>
+              <span class="bg-slate-200 text-slate-700 text-xs font-semibold px-2 py-1 rounded">2018 – 2020</span>
+            </div>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-circle text-slate-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span class="text-slate-700"><strong>STA-282QR</strong> · Introduction to Statistics &mdash;
+                  <em>Instructor</em> (Fall 2019, Spring 2020)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-circle text-slate-400 text-xs mt-1.5 flex-shrink-0"></i>
+                <span class="text-slate-700"><strong>MTH-105</strong> · Intermediate Algebra &mdash; <em>Instructor</em>
+                  (Fall 2018 ×2 sections, Spring 2019)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education" class="py-24 bg-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <p class="text-blue-400 text-xs font-semibold uppercase tracking-widest mb-2">Academic Background</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-3">Education</h2>
+        <span class="accent-line mx-auto"></span>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <!-- PhD -->
+        <div class="bg-gradient-to-br from-blue-900 to-slate-800 border border-blue-700/50 rounded-2xl p-7 card reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-graduation-cap text-white text-lg"></i>
+            </div>
+            <span class="text-blue-400 text-xs font-semibold uppercase tracking-wide">In Progress · Expected Summer
+              2026</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Ph.D. Candidate</h3>
+          <p class="text-blue-300 font-medium mb-1">Computational &amp; Applied Mathematics (Statistics)</p>
+          <p class="text-slate-400 text-sm">Old Dominion University · Norfolk, VA</p>
+          <p class="text-slate-400 text-sm mt-3 italic border-t border-slate-700 pt-3">
+            Dissertation: Copula-based multi-basin modeling of tropical cyclone interdependence across global ocean
+            basins
+          </p>
+        </div>
+
+        <!-- MS ODU -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-7 card reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-slate-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-university text-white text-lg"></i>
+            </div>
+            <span class="text-slate-400 text-xs font-semibold uppercase tracking-wide">2020 – 2023</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Master of Science</h3>
+          <p class="text-slate-300 font-medium mb-1">Computational &amp; Applied Mathematics (Statistics)</p>
+          <p class="text-slate-400 text-sm">Old Dominion University · Norfolk, VA</p>
+        </div>
+
+        <!-- MS CMU -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-7 card reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-slate-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-university text-white text-lg"></i>
+            </div>
+            <span class="text-slate-400 text-xs font-semibold uppercase tracking-wide">2018 – 2020</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Master of Science</h3>
+          <p class="text-slate-300 font-medium mb-1">Applied Statistics and Analytics</p>
+          <p class="text-slate-400 text-sm">Central Michigan University · Mt. Pleasant, MI</p>
+        </div>
+
+        <!-- BSc -->
+        <div class="bg-slate-800 border border-slate-700 rounded-2xl p-7 card reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-slate-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-book-open text-white text-lg"></i>
+            </div>
+            <span class="text-slate-400 text-xs font-semibold uppercase tracking-wide">2013 – 2017</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-1">Bachelor of Science</h3>
+          <p class="text-slate-300 font-medium mb-1">Statistics</p>
+          <p class="text-slate-400 text-sm">University of Dhaka · Dhaka, Bangladesh</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <p class="text-blue-700 text-xs font-semibold uppercase tracking-widest mb-2">Let's Connect</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Get In Touch</h2>
+        <span class="accent-line mx-auto mb-6"></span>
+        <p class="text-slate-600 text-lg max-w-xl mx-auto">
+          Currently on the academic and industry job market. Open to research collaborations, faculty positions, data
+          science roles, and consulting opportunities.
+        </p>
+      </div>
+
+      <!-- Contact cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 reveal">
+
+        <a href="mailto:mhoss005@odu.edu"
+          class="flex flex-col items-center gap-3 p-5 bg-blue-50 border border-blue-100 rounded-xl hover:bg-blue-100 transition-colors group card">
+          <div
+            class="w-11 h-11 bg-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-envelope text-white"></i>
+          </div>
+          <div class="text-center">
+            <div class="font-semibold text-slate-800 text-xs">ODU Email</div>
+            <div class="text-blue-700 text-xs mt-0.5 break-all">mhoss005@odu.edu</div>
+          </div>
+        </a>
+
+        <a href="mailto:iqbal.kmbd@gmail.com"
+          class="flex flex-col items-center gap-3 p-5 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors group card">
+          <div
+            class="w-11 h-11 bg-slate-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fas fa-at text-white"></i>
+          </div>
+          <div class="text-center">
+            <div class="font-semibold text-slate-800 text-xs">Personal</div>
+            <div class="text-slate-600 text-xs mt-0.5 break-all">iqbal.kmbd@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="https://github.com/iqbal1012" target="_blank" rel="noopener"
+          class="flex flex-col items-center gap-3 p-5 bg-slate-50 border border-slate-200 rounded-xl hover:bg-slate-100 transition-colors group card">
+          <div
+            class="w-11 h-11 bg-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fab fa-github text-white"></i>
+          </div>
+          <div class="text-center">
+            <div class="font-semibold text-slate-800 text-xs">GitHub</div>
+            <div class="text-slate-600 text-xs mt-0.5">@iqbal1012</div>
+          </div>
+        </a>
+
+        <!--
+          PLACEHOLDER: Replace YOUR_LINKEDIN_URL with your LinkedIn profile URL.
+        -->
+        <a href="https://www.linkedin.com/in/md-iqbal-hossain-stat" target="_blank" rel="noopener"
+          class="flex flex-col items-center gap-3 p-5 bg-blue-50 border border-blue-100 rounded-xl hover:bg-blue-100 transition-colors group card">
+          <div
+            class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fab fa-linkedin text-white"></i>
+          </div>
+          <div class="text-center">
+            <div class="font-semibold text-slate-800 text-xs">LinkedIn</div>
+            <div class="text-blue-700 text-xs mt-0.5">https://www.linkedin.com/in/md-iqbal-hossain-stat</div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Contact form -->
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 reveal">
+        <h3 class="font-bold text-slate-900 text-xl mb-6">Send a Message</h3>
+        <!--
+          FORM SETUP: This form uses Formspree (https://formspree.io) — a free email forwarding service.
+          Steps to activate:
+            1. Go to https://formspree.io and sign up for a free account.
+            2. Create a new form and copy your unique endpoint (looks like https://formspree.io/f/abcdefgh).
+            3. Replace "YOUR_FORMSPREE_ID" in the action attribute below with your endpoint ID.
+        -->
+        <form action="https://formspree.io/f/xaqaqzdy" method="POST" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-slate-700 mb-1.5">Full Name</label>
+              <input id="name" type="text" name="name" required placeholder="Your name"
+                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-sm transition-shadow" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Email Address</label>
+              <input id="email" type="email" name="email" required placeholder="your@email.com"
+                class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-sm transition-shadow" />
+            </div>
+          </div>
+          <div>
+            <label for="subject" class="block text-sm font-medium text-slate-700 mb-1.5">Subject</label>
+            <input id="subject" type="text" name="subject"
+              placeholder="Research collaboration / Job opportunity / Other"
+              class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-sm transition-shadow" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-slate-700 mb-1.5">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."
+              class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white text-sm resize-none transition-shadow"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-blue-800 hover:bg-blue-700 active:bg-blue-900 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center gap-2">
+            Send Message <i class="fas fa-paper-plane text-sm"></i>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-slate-950 text-slate-400 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+        <div>
+          <div class="font-serif font-bold text-white text-xl mb-1">Md Iqbal Hossain</div>
+          <div class="text-sm">Ph.D. Candidate · Old Dominion University · Norfolk, VA 23508</div>
+          <div class="text-sm mt-1">(989) 317-7578 &nbsp;·&nbsp; mhoss005@odu.edu</div>
+        </div>
+        <nav class="flex items-center gap-5" aria-label="Footer social links">
+          <a href="https://github.com/iqbal1012" target="_blank" rel="noopener" aria-label="GitHub"
+            class="hover:text-white transition-colors text-xl"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/md-iqbal-hossain-stat" target="_blank" rel="noopener"
+            aria-label="LinkedIn" class="hover:text-white transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+          <a href="https://scholar.google.com/citations?user=lHu-vjkAAAAJ&hl=en" target="_blank" rel="noopener"
+            aria-label="Google Scholar" class="hover:text-white transition-colors text-xl"><i
+              class="fas fa-graduation-cap"></i></a>
+          <a href="https://www.researchgate.net/profile/Md-Iqbal-Hossain-8?ev=hdr_xprf" target="_blank" rel="noopener"
+            aria-label="ResearchGate" class="hover:text-white transition-colors text-xl"><i
+              class="fab fa-researchgate"></i></a>
+          <a href="https://sites.google.com/view/md-iqbal-hossain-stat-analyst/home" target="_blank" rel="noopener"
+            aria-label="Google Sites" class="hover:text-white transition-colors text-xl"><i
+              class="fas fa-globe"></i></a>
+          <a href="mailto:mhoss005@odu.edu" aria-label="Email" class="hover:text-white transition-colors text-xl"><i
+              class="fas fa-envelope"></i></a>
+        </nav>
+      </div>
+      <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+        &copy; 2026 Md Iqbal Hossain &nbsp;&middot;&nbsp; Built with HTML &amp; Tailwind CSS
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // --- Active nav link on scroll ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('header .nav-link');
+
+    function updateActiveNav() {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+    // --- Scroll reveal ---
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
